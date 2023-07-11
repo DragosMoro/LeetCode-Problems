@@ -1,3 +1,5 @@
+import java.util.Map;
+
 class Solution {
     public boolean isAnagram(String s, String t) {
         Map<Character, Integer> map = new HashMap<>();
