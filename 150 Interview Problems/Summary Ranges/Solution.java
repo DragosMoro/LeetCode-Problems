@@ -18,7 +18,7 @@ class Solution {
                 if(counter==0)
                 {
                     sb.append(nums[i]);
-                    sb.append("->");
+                    // sb.append("->");
                     counter++;
                 }
                 else{
