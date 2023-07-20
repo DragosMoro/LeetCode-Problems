@@ -3,13 +3,13 @@ import java.util.List;
 
 class Solution {
     public List<String> summaryRanges(int[] nums) {
-        List<String> output = new ArrayList<>();
+        List<String> res = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         int counter = 0;
         if(nums.length==1)
         {
-             output.add(Integer.toString(nums[0]));
-            return output;
+             res.add(Integer.toString(nums[0]));
+            return res;
         }
         for(int i=0;i<nums.length-1;i++)
         {
@@ -18,8 +18,9 @@ class Solution {
                 if(counter==0)
                 {
                     sb.append(nums[i]);
-                    // sb.append("->");
+                    sb.append("->");
                     counter++;
+
                 }
                 else{
                     counter++; 
@@ -30,11 +31,11 @@ class Solution {
 
                 if(counter==0)
                 {
-                    output.add(Integer.toString(nums[i]));
+                    res.add(Integer.toString(nums[i]));
                 }
                 else{
                     sb.append(nums[i]);
-                    output.add(sb.toString());
+                    res.add(sb.toString());
                     sb = new StringBuilder();
                     counter=0;
                 }
@@ -44,18 +45,18 @@ class Solution {
                 if(counter !=0)
                 {
                     sb.append(nums[i+1]);
-                    output.add(sb.toString());
+                    res.add(sb.toString());
                     sb = new StringBuilder();
                     counter=0;
                 }
                 else{
-                    output.add(Integer.toString(nums[i+1]));
+                    res.add(Integer.toString(nums[i+1]));
                 }
 
             }
         
 
         }
-        return output;
+        return res;
     }
 }
