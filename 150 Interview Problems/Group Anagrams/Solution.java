@@ -1,11 +1,7 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<String, List> dict = new HashMap<>();
+        Map<String, List<String>> dict = new HashMap<>();
+        List<List<String>> finalList = new ArrayList<>();
         if(strs.length<1)
         {
             List<List<String>> lista = new ArrayList<>();
@@ -16,14 +12,26 @@ class Solution {
 
             char[] chars = strs[i].toCharArray();
             Arrays.sort(chars);
-            if(dict.containsKey(toString(chars)))
+            String str = new String(chars);
+            if(dict.containsKey(str))
             {
-                
+                List<String> elem = dict.get(str);
+                elem.add(strs[i]);
+                dict.replace(str, elem);
             }
-            // dict.put(toString(chars), strs[i]);
+            else{
+                 List<String> elem = new ArrayList<>();
+                elem.add(strs[i]);
+                dict.put(str, elem);    
+            }
+                
             
-
         }
-        return dict;      
+
+        for(Map.Entry<String, List<String>> entry: dict.entrySet())
+        {
+            finalList.add(entry.getValue());
+        }    
+        return finalList;
         }
 }
