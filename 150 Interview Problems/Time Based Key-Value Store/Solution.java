@@ -1,3 +1,5 @@
+import java.util.Map;
+
 class Node{
     int timestamp;
     String value;
