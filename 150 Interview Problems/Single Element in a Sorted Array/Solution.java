@@ -18,12 +18,5 @@ class Solution {
             int leftSize = nums[mid - 1] == nums[mid] ? mid-1:mid;
             if(leftSize%2 == 0)
             {
-                left = mid+1;
-            } 
-            else{
-                right = mid-1;
-            }
-        }
-        return nums[left];
-    }
+           
 }
