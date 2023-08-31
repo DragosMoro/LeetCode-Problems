@@ -1,6 +1,9 @@
 
 //O(log⁡(N−k)+k).
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
       List<Integer> res = new ArrayList<>();  
