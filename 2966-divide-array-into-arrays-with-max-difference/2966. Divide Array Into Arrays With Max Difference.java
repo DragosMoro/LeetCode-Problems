@@ -1,7 +1,6 @@
 class Solution {
     public int[][] divideArray(int[] nums, int k) {
-        List<List<Integer>> list = new ArrayList<>();
-        list.add(new ArrayList<>());
+         int[][] arr = new int[nums.length/3][3];
         Arrays.sort(nums);
         int listIndex = 0;
         int elementIndex = 0;
@@ -10,30 +9,18 @@ class Solution {
             if(elementIndex>2)
             {
                 elementIndex = 0;
-                list.add(new ArrayList<>());
                 listIndex++;
             }
-            for(int elem:list.get(listIndex))
+            for(int elem:arr[listIndex])
             {
-                if(Math.abs(el-elem)>k)
+
+                if(elem != 0 && Math.abs(el-elem)>k)
                 {
                     return new int[0][0];
                 }
             }
-            list.get(listIndex).add(el);
+            arr[listIndex][elementIndex] = el;
             elementIndex++;
-        }
-        int[][] arr = new int[list.size()][3];
-        int i=0;
-        for(List<Integer> elemList:list)
-        {
-            int j=0;
-            for(int el:elemList)
-            {
-                arr[i][j] = el;
-                j++;
-            }
-            i++;
         }
         return arr;
     }
