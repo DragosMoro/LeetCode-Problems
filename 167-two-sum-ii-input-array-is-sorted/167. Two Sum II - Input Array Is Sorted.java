@@ -1,26 +1,23 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int left = 0;
-        int right = numbers.length - 1;
+        int right = numbers.length-1;
         int[] res = new int[2];
-        while(left!= right)
+        while(left<right)
         {
-            if(numbers[left] + numbers[right] < target)
+            if(target-numbers[left]>numbers[right])
             {
                 left++;
             }
-            else if(numbers[left] + numbers[right] > target)
+            else if(target-numbers[left]<numbers[right])
             {
                 right--;
             }
-            else
-            {
+            else{
                 res[0] = left+1;
                 res[1] = right+1;
                 return res;
-            }       
-         
-
+            }
         }
         return res;
     }
