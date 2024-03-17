@@ -1,23 +1,17 @@
 class Solution {
     public int arraySign(int[] nums) {
-        double product=1;
+        int returnNumber=1;
         for(int num: nums)
         {
-            product=product*num;
+            if(num == 0)
+            {
+                return 0;
+            }
+            if(num<0)
+            {
+                returnNumber = -1*returnNumber;
+            }
         }
-        System.out.println(product);
-        return signFunc(product);
-    }
-    public int signFunc(double x)
-    {
-        if(x>0)
-        {
-            return 1;
-        }
-        if(x<0)
-        {
-            return -1;
-        }
-       return 0;
+        return returnNumber;
     }
 }
