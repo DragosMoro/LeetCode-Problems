@@ -3,7 +3,7 @@ class Solution {
         int sum =0;
         int left=0;
         int right=1;
-        while(right<prices.length && left<right)
+        while(right<prices.length)
         {
             
            if(prices[left]>prices[right])
