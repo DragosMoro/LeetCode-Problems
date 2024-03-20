@@ -18,8 +18,6 @@ class Solution {
             list1 = list1.next;
             current++;
         }
-        if(current == a-1)
-            {
                ListNode next = list1.next;
                for(int i=0;i<b-a;i++)
                {
@@ -33,7 +31,7 @@ class Solution {
                 list2 = list2.next;
                }
                list2.next = last;
-            }
+            
         return res;
     }
 }
