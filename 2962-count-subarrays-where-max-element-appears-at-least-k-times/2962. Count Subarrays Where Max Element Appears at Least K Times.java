@@ -10,7 +10,7 @@ class Solution {
             maxNum = Math.max(maxNum, num);
         }
         
-        while (right < nums.length || left > right) {
+        while (right < nums.length) {
             if (nums[(int)right] == maxNum) {
                 count++;
             }
